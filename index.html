@@ -102,7 +102,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 1001;
+            z-index: 1002;
         }
 
         nav {
@@ -117,7 +117,7 @@
             top: 4px;
             left: 0;
             width: 100%;
-            z-index: 1000;
+            z-index: 1001;
             gap: 1rem;
             backdrop-filter: blur(8px);
         }
@@ -141,7 +141,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #E2E8F0; /* High contrast visible color */
+            color: #E2E8F0;
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -161,7 +161,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: clamp(4rem, 8vw, 6rem) 5%;
-            margin-top: 90px; /* Offset to prevent header overlap */
+            margin-top: 100px; /* Secure top offset prevent header collision */
         }
 
         .hero-content {
@@ -626,24 +626,41 @@
             font-size: 0.75rem;
         }
 
-        /* MOBILE ALIGNMENT RESPONSIVE BREAKPOINT RULES */
+        /* COMPACT RESPONSIVE FIXES INHERITED FROM image_a6a7ae.png RESULTS */
         @media (max-width: 768px) {
             nav {
-                justify-content: center;
-                padding: 1.2rem 1rem;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.8rem 1rem; /* Tightened padding to prevent blocking main hero title text */
+                position: fixed;
+                top: 4px;
+                left: 0;
+                width: 100%;
+                height: auto;
+            }
+
+            /* Collapses bulky inline links inside modern mobile UI structures */
+            nav .nav-links a:not(.btn-nav-compact) {
+                display: none !important;
             }
 
             .nav-links {
-                justify-content: center;
-                gap: 1.2rem;
-                width: 100%;
+                width: auto;
+                justify-content: flex-end;
+                gap: 0;
+            }
+
+            .btn-nav-compact {
+                font-size: 0.75rem !important;
+                padding: 0.5rem 0.9rem !important;
             }
 
             .hero-split-zone {
                 flex-direction: column;
-                padding: 2rem 1.5rem;
-                gap: 2.5rem;
-                text-align: center; /* Centers title and subtitles on mobile screens */
+                padding: 2.5rem 1.5rem;
+                gap: 2rem;
+                text-align: center;
+                margin-top: 75px; /* Offset spacing below optimized sleek mobile header bar */
             }
 
             .hero-content {
@@ -651,7 +668,7 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                align-items: center; /* Aligns textual framework elements evenly */
+                align-items: center;
             }
 
             .hero-content p {
@@ -659,12 +676,12 @@
                 margin-right: auto;
             }
 
-            /* FIXED BUTTON OVERLAP SYSTEM */
+            /* RESOLVED BUTTON OVERLAP SYSTEM FRAME */
             .hero-buttons {
                 display: flex;
-                flex-direction: column; /* Stacks hero buttons in vertical layouts */
+                flex-direction: column;
                 align-items: center;
-                gap: 1rem; /* Clear structural boundary spacing */
+                gap: 1rem;
                 width: 100%;
                 margin-top: 1rem;
             }
@@ -673,7 +690,7 @@
             .hero-buttons .btn-outline {
                 display: block;
                 width: 100%;
-                max-width: 320px; /* Comfort width threshold on smaller phones */
+                max-width: 320px;
                 margin: 0 auto;
             }
 
@@ -727,7 +744,7 @@
             </div>
         </div>
         <div class="hero-media-box">
-            <!-- PREMIUM HIGH-RISE IMAGE UPGRADE -->
+            <!-- LUXURY REAL ESTATE IMAGE FIX -->
             <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Premium Modern Architectural Asset Building">
         </div>
     </header>
@@ -791,7 +808,7 @@
             </div>
         </div>
 
-        <!-- SERVICE 4 (FIXED HIGHER ED PICTURE LINK) -->
+        <!-- SERVICE 4 -->
         <div class="service-card">
             <div class="service-img-holder">
                 <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" alt="Higher Education Funding Structure">
@@ -863,6 +880,7 @@
                 <p class="testimonial-text">"Getting a home loan approved in Chennai for a multi-story apartment felt like an endless paper maze. The team at Brick & Key took over the entire document vetting pipeline and locked down an elite interest rate with SBI in record time. Absolute relief!"</p>
             </div>
             <div class="client-profile">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Arun Kumar Profile Avatar" class="client-avatar">
                 <div class="client-details">
                     <h4>Arun Kumar</h4>
                     <span>OMR, Chennai — Home Loan</span>
@@ -877,6 +895,7 @@
                 <p class="testimonial-text">"As a business owner, standard processing channels always question your irregular cash flow files. Brick & Key understood my balance sheet architecture perfectly and safely structured a Loan Against Property to unlock necessary corporate capital."</p>
             </div>
             <div class="client-profile">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Priya Ramanathan Profile Avatar" class="client-avatar">
                 <div class="client-details">
                     <h4>Priya Ramanathan</h4>
                     <span>Anna Nagar — Business LAP</span>
@@ -891,6 +910,7 @@
                 <p class="testimonial-text">"When my son got accepted into an international university framework, we needed swift funding balance checks to process his visa. Their doorstep processing service collected our records from our home and closed the allocation within days."</p>
             </div>
             <div class="client-profile">
+                <img src="https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&w=100&h=100&q=80" alt="Rajesh Sundaram Profile Avatar" class="client-avatar">
                 <div class="client-details">
                     <h4>Rajesh Sundaram</h4>
                     <span>Adyar — Higher Education Funding</span>
