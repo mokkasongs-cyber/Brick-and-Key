@@ -17,6 +17,7 @@
             max-width: 100%;
             overflow-x: hidden;
             -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
         }
 
         :root {
@@ -93,11 +94,15 @@
             color: var(--gold-champagne);
         }
 
-        /* PREMIUM NAVIGATION HEADER */
+        /* PREMIUM STICKY NAVIGATION HEADER */
         .gold-banner-line {
             height: 4px;
             background: linear-gradient(90deg, var(--gold-muted), var(--gold-champagne), var(--gold-muted));
             width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1001;
         }
 
         nav {
@@ -108,10 +113,13 @@
             padding: 1.5rem 5%;
             background-color: rgba(10, 17, 40, 0.95);
             border-bottom: 1px solid var(--border-elegant);
-            position: sticky;
-            top: 0;
+            position: fixed;
+            top: 4px;
+            left: 0;
+            width: 100%;
             z-index: 1000;
             gap: 1rem;
+            backdrop-filter: blur(8px);
         }
 
         .logo {
@@ -133,7 +141,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #040712;
+            color: #E2E8F0; /* High contrast visible color */
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -144,7 +152,7 @@
 
         .btn-nav-compact { padding: 0.5rem 1.2rem; }
 
-        /* THE SPLIT HERO FRAME */
+        /* HERO ZONE ARCHITECTURE */
         .hero-split-zone {
             display: flex;
             flex-wrap: wrap;
@@ -153,6 +161,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: clamp(4rem, 8vw, 6rem) 5%;
+            margin-top: 90px; /* Offset to prevent header overlap */
         }
 
         .hero-content {
@@ -180,12 +189,19 @@
             margin-bottom: 2.5rem;
         }
 
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .hero-media-box {
             flex: 1 1 400px;
-            border: 1px solid var(--border-elegant);
+            border: 1px solid rgba(0, 229, 255, 0.2);
             padding: 0.8rem;
             background-color: var(--bg-card-light);
             border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.05);
         }
 
         .hero-media-box img {
@@ -271,7 +287,7 @@
             font-size: clamp(1.8rem, 4vw, 2.4rem);
         }
 
-        /* IMAGE BASED SERVICE GRID SYSTEM */
+        /* SERVICE GRID SYSTEM */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -301,7 +317,7 @@
             height: 200px;
             overflow: hidden;
             border-bottom: 1px solid var(--border-elegant);
-            background-color: #0a1128; /* Fallback frame flavor */
+            background-color: #0a1128;
         }
 
         .service-img-holder img {
@@ -372,7 +388,7 @@
         .split-media img {
             width: 100%;
             height: auto;
-            max-height: 400px;
+            max-height: 380px;
             object-fit: cover;
             border-radius: 4px;
             display: block;
@@ -411,6 +427,76 @@
         .feature-item p {
             color: var(--text-dimmed);
             font-size: 0.88rem;
+        }
+
+        /* PREMIUM TESTIMONIALS STRUCTURE */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 4rem 5%;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-card-light);
+            border: 1px solid var(--border-elegant);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 229, 255, 0.2);
+        }
+
+        .star-rating {
+            color: var(--gold-champagne);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid var(--border-elegant);
+            padding-top: 1.2rem;
+        }
+
+        .client-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold-champagne);
+        }
+
+        .client-details h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .client-details span {
+            font-size: 0.8rem;
+            color: var(--text-dimmed);
+            display: block;
         }
 
         /* INTERACTIVE CONSULTATION CAPTURE FORM */
@@ -540,7 +626,7 @@
             font-size: 0.75rem;
         }
 
-        /* WEB RESPONSIVE LAYOUT BREAKPOINTS */
+        /* MOBILE ALIGNMENT RESPONSIVE BREAKPOINT RULES */
         @media (max-width: 768px) {
             nav {
                 justify-content: center;
@@ -555,13 +641,40 @@
 
             .hero-split-zone {
                 flex-direction: column;
-                padding: 3rem 1.5rem;
-                gap: 2rem;
+                padding: 2rem 1.5rem;
+                gap: 2.5rem;
+                text-align: center; /* Centers title and subtitles on mobile screens */
             }
 
-            .hero-content, .hero-media-box {
+            .hero-content {
                 flex: 1 1 100%;
                 width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Aligns textual framework elements evenly */
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* FIXED BUTTON OVERLAP SYSTEM */
+            .hero-buttons {
+                display: flex;
+                flex-direction: column; /* Stacks hero buttons in vertical layouts */
+                align-items: center;
+                gap: 1rem; /* Clear structural boundary spacing */
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .hero-buttons .btn-accent,
+            .hero-buttons .btn-outline {
+                display: block;
+                width: 100%;
+                max-width: 320px; /* Comfort width threshold on smaller phones */
+                margin: 0 auto;
             }
 
             .partner-strip-zone {
@@ -584,95 +697,20 @@
                 height: auto;
                 max-height: none;
             }
-
-            .hero-buttons .btn-accent,
-            .hero-buttons .btn-outline {
-                width: 100%;
-                max-width: 280px;
-            }
         }
-
-        /* PREMIUM TESTIMONIALS SLIDER BREAK */
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5% 4rem 5%;
-}
-
-.testimonial-card {
-    background-color: var(--bg-card-light);
-    border: 1px solid var(--border-elegant);
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(0, 229, 255, 0.2);
-}
-
-.star-rating {
-    color: var(--gold-champagne);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-}
-
-.testimonial-text {
-    color: var(--text-light);
-    font-style: italic;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-}
-
-.client-profile {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    border-top: 1px solid var(--border-elegant);
-    padding-top: 1.2rem;
-}
-
-.client-avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--gold-champagne);
-}
-
-.client-details h4 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-.client-details span {
-    font-size: 0.8rem;
-    color: var(--text-dimmed);
-    display: block;
-}
     </style>
 </head>
 <body>
 
     <div class="gold-banner-line"></div>
 
-    <!-- CORPORATE NAVIGATION BAR -->
+    <!-- CORPORATE NAVIGATION BAR (STICKY) -->
     <nav>
-        <div class="logo">BRICK & KEY</span></div>
+        <div class="logo">BRICK & KEY<span>.</span></div>
         <div class="nav-links">
             <a href="#services">Our Services</a>
             <a href="#why-us">The Bridge Advantage</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#consultation" class="btn-accent btn-nav-compact">Book Free Call</a>
         </div>
     </nav>
@@ -688,9 +726,9 @@
                 <a href="#consultation" class="btn-accent">Book A Consultation</a>
             </div>
         </div>
-        <div class="hero-media-box" style="box-shadow: 0 10px 30px rgba(0, 229, 255, 0.05); border-color: rgba(0, 229, 255, 0.2);">
-            <!-- SWAPPED TO A PREMIUM MODERN HIGH-RISE ASSET -->
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Premium Modern Architectural Asset">
+        <div class="hero-media-box">
+            <!-- PREMIUM HIGH-RISE IMAGE UPGRADE -->
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Premium Modern Architectural Asset Building">
         </div>
     </header>
 
@@ -753,7 +791,7 @@
             </div>
         </div>
 
-        <!-- SERVICE 4 (FIXED IMAGE SPECIFICALLY DETECTED IN image_b18d4c.png) -->
+        <!-- SERVICE 4 (FIXED HIGHER ED PICTURE LINK) -->
         <div class="service-card">
             <div class="service-img-holder">
                 <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" alt="Higher Education Funding Structure">
@@ -787,7 +825,6 @@
             <h3>Elite Client Support Serving as Your Strategic Financial Bridge</h3>
             <p>Navigating financial parameters alone can feel overwhelming. Brick and Key acts as your direct liaison, transforming complex system logistics into standard operations.</p>
             
-            <!-- CODES AND FEATURES -->
             <div class="feature-item">
                 <div class="feature-bullet">&#9670;</div>
                 <div>
@@ -812,13 +849,12 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION HEADER -->
+    <!-- TESTIMONIALS SECTION -->
     <section class="section-title-block" id="testimonials">
         <span>Real Stories from Verified Asset Buyers</span>
         <h2>What Our Clients Say About Us</h2>
     </section>
 
-    <!-- TESTIMONIALS CONTENT GRID -->
     <section class="testimonials-grid">
         <!-- TESTIMONIAL 1 -->
         <div class="testimonial-card">
@@ -827,7 +863,7 @@
                 <p class="testimonial-text">"Getting a home loan approved in Chennai for a multi-story apartment felt like an endless paper maze. The team at Brick & Key took over the entire document vetting pipeline and locked down an elite interest rate with SBI in record time. Absolute relief!"</p>
             </div>
             <div class="client-profile">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Arun K." class="client-avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Arun Kumar Profile Avatar" class="client-avatar">
                 <div class="client-details">
                     <h4>Arun Kumar</h4>
                     <span>OMR, Chennai — Home Loan</span>
@@ -842,10 +878,10 @@
                 <p class="testimonial-text">"As a business owner, standard processing channels always question your irregular cash flow files. Brick & Key understood my balance sheet architecture perfectly and safely structured a Loan Against Property to unlock necessary corporate capital."</p>
             </div>
             <div class="client-profile">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Priya R." class="client-avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Priya Ramanathan Profile Avatar" class="client-avatar">
                 <div class="client-details">
                     <h4>Priya Ramanathan</h4>
-                    <span>Anna Nagar — Business Loan Against Property</span>
+                    <span>Anna Nagar — Business LAP</span>
                 </div>
             </div>
         </div>
@@ -857,7 +893,7 @@
                 <p class="testimonial-text">"When my son got accepted into an international university framework, we needed swift funding balance checks to process his visa. Their doorstep processing service collected our records from our home and closed the allocation within days."</p>
             </div>
             <div class="client-profile">
-                <img src="https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&w=100&h=100&q=80" alt="Rajesh S." class="client-avatar">
+                <img src="https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&w=100&h=100&q=80" alt="Rajesh Sundaram Profile Avatar" class="client-avatar">
                 <div class="client-details">
                     <h4>Rajesh Sundaram</h4>
                     <span>Adyar — Higher Education Funding</span>
@@ -920,6 +956,7 @@
         <div class="footer-links">
             <a href="#services">Our Services</a>
             <a href="#why-us">The Bridge Advantage</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#consultation">Book Call</a>
         </div>
 
