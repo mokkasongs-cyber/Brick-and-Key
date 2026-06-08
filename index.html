@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick and Key — Premium Banking & Loan Consultancy Chennai</title>
+    <style>
+        /* CORPORATE TRUST PALETTE & CSS RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        :root {
+            --bg-deep-navy: #0A1128;      /* Primary corporate background */
+            --bg-card-light: #101F42;     /* Card background grid blocks */
+            --gold-champagne: #D4AF37;    /* Wealth, trust, and premium keys */
+            --gold-muted: #AA8C2C;
+            --accent-blue: #00E5FF;       /* Active interactive buttons */
+            --accent-blue-hover: #00B8D4;
+            --text-light: #F4F6F9;
+            --text-dimmed: #94A3B8;
+            --border-elegant: #1E293B;
+            --serif-font: 'Playfair Display', 'Didot', 'Georgia', serif;
+            --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-deep-navy);
+            color: var(--text-light);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+        }
+
+        /* ELEGANT TYPOGRAPHY ACCENTS */
+        h1, h2, h3, h4, .serif-title {
+            font-family: var(--serif-font);
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .gold-text { color: var(--gold-champagne); }
+
+        /* BUTTON ARCHITECTURE */
+        .btn-accent {
+            background-color: var(--accent-blue);
+            color: #0A1128;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-accent:hover {
+            background-color: var(--accent-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px solid var(--border-elegant);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold-champagne);
+            color: var(--gold-champagne);
+        }
+
+        /* PREMIUM NAVIGATION HEADER */
+        .gold-banner-line {
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-muted), var(--gold-champagne), var(--gold-muted));
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: rgba(10, 17, 40, 0.95);
+            border-bottom: 1px solid var(--border-elegant);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-family: var(--serif-font);
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: var(--text-light);
+        }
+
+        .logo span { color: var(--gold-champagne); }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #040712;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--gold-champagne); }
+
+        .btn-nav-compact { padding: 0.5rem 1.2rem; }
+
+        /* THE SPLIT HERO FRAME */
+        .hero-split-zone {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(4rem, 8vw, 6rem) 5%;
+        }
+
+        .hero-content {
+            flex: 1 1 500px;
+        }
+
+        .hero-subtitle {
+            color: var(--gold-champagne);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            color: var(--text-dimmed);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-media-box {
+            flex: 1 1 400px;
+            border: 1px solid var(--border-elegant);
+            padding: 0.8rem;
+            background-color: var(--bg-card-light);
+            border-radius: 8px;
+        }
+
+        .hero-media-box img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+
+        /* TRUSTED BANKING PARTNERS STRIP */
+        .partner-strip-zone {
+            background-color: #060B1A;
+            border-top: 1px solid var(--border-elegant);
+            border-bottom: 1px solid var(--border-elegant);
+            padding: 2.5rem 5%;
+            width: 100%;
+        }
+
+        .partner-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .partner-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-dimmed);
+            font-weight: 600;
+        }
+
+        .partner-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem 2.5rem;
+            width: 100%;
+        }
+
+        .bank-logo-badge {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            opacity: 0.5;
+            padding: 0.4rem 1rem;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .bank-logo-badge:hover {
+            opacity: 1;
+            color: var(--gold-champagne);
+            border-color: var(--border-elegant);
+            background-color: var(--bg-deep-navy);
+        }
+
+        /* SECTION HEADER MODULE */
+        .section-title-block {
+            text-align: center;
+            padding: clamp(4rem, 8vw, 6rem) 1.5rem 3.5rem 1.5rem;
+        }
+
+        .section-title-block span {
+            color: var(--gold-champagne);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .section-title-block h2 {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+        }
+
+        /* IMAGE BASED SERVICE GRID SYSTEM */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 4rem 5%;
+        }
+
+        .service-card {
+            background-color: var(--bg-card-light);
+            border: 1px solid var(--border-elegant);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold-champagne);
+            transform: translateY(-4px);
+        }
+
+        .service-img-holder {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-elegant);
+            background-color: #0a1128; /* Fallback frame flavor */
+        }
+
+        .service-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img-holder img {
+            transform: scale(1.05);
+        }
+
+        .service-info-content {
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .service-card p {
+            color: var(--text-dimmed);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: auto;
+            display: inline-block;
+        }
+
+        /* ASYMMETRIC IMAGE SPLIT SECTION */
+        .split-asymmetric-block {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .split-media, .split-text-box {
+            flex: 1 1 450px;
+            min-width: 0;
+        }
+
+        .split-media {
+            border: 1px solid var(--border-elegant);
+            padding: 0.8rem;
+            background-color: var(--bg-card-light);
+            border-radius: 8px;
+        }
+
+        .split-media img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .split-text-box h3 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+
+        .split-text-box p {
+            color: var(--text-dimmed);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-bullet {
+            color: var(--gold-champagne);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .feature-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-light);
+        }
+
+        .feature-item p {
+            color: var(--text-dimmed);
+            font-size: 0.88rem;
+        }
+
+        /* INTERACTIVE CONSULTATION CAPTURE FORM */
+        .form-section-wrapper {
+            max-width: 700px;
+            margin: 4rem auto 0 auto;
+            padding: 0 5% 6rem 5%;
+        }
+
+        .consultation-form-box {
+            background-color: var(--bg-card-light);
+            border: 1px solid var(--border-elegant);
+            padding: clamp(2rem, 5vw, 3rem);
+            border-radius: 8px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: var(--text-dimmed);
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-dimmed);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background-color: var(--bg-deep-navy);
+            border: 1px solid var(--border-elegant);
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: var(--sans-font);
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold-champagne);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
+        }
+
+        .btn-submit-full {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* PREMIUM CORPORATE FOOTER */
+        footer {
+            background-color: #040712;
+            border-top: 1px solid var(--border-elegant);
+            padding: 5rem 5% 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--serif-font);
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span { color: var(--gold-champagne); }
+
+        .footer-tagline {
+            color: var(--text-dimmed);
+            max-width: 450px;
+            margin: 0 auto 2.5rem auto;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-links a {
+            color: var(--text-dimmed);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--text-light); }
+
+        .footer-divider {
+            height: 1px;
+            background-color: var(--border-elegant);
+            max-width: 1200px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .legal-notice {
+            color: #4A5568;
+            font-size: 0.75rem;
+        }
+
+        /* WEB RESPONSIVE LAYOUT BREAKPOINTS */
+        @media (max-width: 768px) {
+            nav {
+                justify-content: center;
+                padding: 1.2rem 1rem;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 1.2rem;
+                width: 100%;
+            }
+
+            .hero-split-zone {
+                flex-direction: column;
+                padding: 3rem 1.5rem;
+                gap: 2rem;
+            }
+
+            .hero-content, .hero-media-box {
+                flex: 1 1 100%;
+                width: 100%;
+            }
+
+            .partner-strip-zone {
+                padding: 2rem 1rem;
+            }
+
+            .partner-grid {
+                gap: 0.8rem 1.2rem;
+            }
+
+            .split-asymmetric-block {
+                flex-direction: column;
+                padding: 0 1.5rem;
+                gap: 2.5rem;
+            }
+
+            .split-media, .split-text-box {
+                flex: 1 1 100%;
+                width: 100%;
+                height: auto;
+                max-height: none;
+            }
+
+            .hero-buttons .btn-accent,
+            .hero-buttons .btn-outline {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* PREMIUM TESTIMONIALS SLIDER BREAK */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5% 4rem 5%;
+}
+
+.testimonial-card {
+    background-color: var(--bg-card-light);
+    border: 1px solid var(--border-elegant);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 229, 255, 0.2);
+}
+
+.star-rating {
+    color: var(--gold-champagne);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.testimonial-text {
+    color: var(--text-light);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.client-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border-elegant);
+    padding-top: 1.2rem;
+}
+
+.client-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold-champagne);
+}
+
+.client-details h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.client-details span {
+    font-size: 0.8rem;
+    color: var(--text-dimmed);
+    display: block;
+}
+    </style>
+</head>
+<body>
+
+    <div class="gold-banner-line"></div>
+
+    <!-- CORPORATE NAVIGATION BAR -->
+    <nav>
+        <div class="logo">BRICK & KEY</span></div>
+        <div class="nav-links">
+            <a href="#services">Our Services</a>
+            <a href="#why-us">The Bridge Advantage</a>
+            <a href="#consultation" class="btn-accent btn-nav-compact">Book Free Call</a>
+        </div>
+    </nav>
+
+    <!-- ASYMMETRIC VISUAL HERO ZONE -->
+    <header class="hero-split-zone">
+        <div class="hero-content">
+            <div class="hero-subtitle">Premium Financial Solutions — Chennai</div>
+            <h1>Your Trusted Bridge to Seamless Bank Loan Approvals</h1>
+            <p>From selecting the perfect structural asset to navigating complex documentation pipelines, we coordinate with prime banking networks to deliver absolute clarity and transparency.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-outline">Explore Loan Frameworks</a>
+                <a href="#consultation" class="btn-accent">Book A Consultation</a>
+            </div>
+        </div>
+        <div class="hero-media-box" style="box-shadow: 0 10px 30px rgba(0, 229, 255, 0.05); border-color: rgba(0, 229, 255, 0.2);">
+            <!-- SWAPPED TO A PREMIUM MODERN HIGH-RISE ASSET -->
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Premium Modern Architectural Asset">
+        </div>
+    </header>
+
+    <!-- TRUSTED BANKING PARTNERS STRIP -->
+    <section class="partner-strip-zone">
+        <div class="partner-wrapper">
+            <span class="partner-label">Direct Banking & Financial Tie-ups</span>
+            <div class="partner-grid">
+                <div class="bank-logo-badge">SBI</div>
+                <div class="bank-logo-badge">HDFC BANK</div>
+                <div class="bank-logo-badge">INDIAN BANK</div>
+                <div class="bank-logo-badge">KOTAK</div>
+                <div class="bank-logo-badge">ADITYA BIRLA FINANCE</div>
+                <div class="bank-logo-badge">IDFC FIRST</div>
+                <div class="bank-logo-badge">INDUSIND BANK</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE ADVISORY SERVICES BLOCK -->
+    <section class="section-title-block" id="services">
+        <span>End-To-End Brokerage & Verification</span>
+        <h2>Tailored Financial Frameworks</h2>
+    </section>
+
+    <section class="services-grid">
+        <!-- SERVICE 1 -->
+        <div class="service-card">
+            <div class="service-img-holder">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" alt="New Home Loan Asset">
+            </div>
+            <div class="service-info-content">
+                <h3>New Home Financing</h3>
+                <p>Ready to acquire your dream house asset? We evaluate your exact profile, cross-match with lowest processing rates, and fast-track processing directly with target bank branches.</p>
+                <a href="#consultation" class="card-link">Apply Architecture &rarr;</a>
+            </div>
+        </div>
+
+        <!-- SERVICE 2 -->
+        <div class="service-card">
+            <div class="service-img-holder">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=500&q=80" alt="Mortgage Loan Against Property">
+            </div>
+            <div class="service-info-content">
+                <h3>Mortgage & Capital Unlocking</h3>
+                <p>Unlock hidden liquidation wealth out of your current residential asset. We assist in structuring custom Loan Against Property (LAP) brackets at highly attractive interest limits.</p>
+                <a href="#consultation" class="card-link">Unlock Asset Value &rarr;</a>
+            </div>
+        </div>
+
+        <!-- SERVICE 3 -->
+        <div class="service-card">
+            <div class="service-img-holder">
+                <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&w=500&q=80" alt="Instant Personal Bank Capital">
+            </div>
+            <div class="service-info-content">
+                <h3>Instant Personal Loans</h3>
+                <p>Bridge unforeseen operational liquidity gaps cleanly. Acquire swift, collateral-free bank options matching custom profiles with minimal automated processing delays.</p>
+                <a href="#consultation" class="card-link">Request Fast Capital &rarr;</a>
+            </div>
+        </div>
+
+        <!-- SERVICE 4 (FIXED IMAGE SPECIFICALLY DETECTED IN image_b18d4c.png) -->
+        <div class="service-card">
+            <div class="service-img-holder">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" alt="Higher Education Funding Structure">
+            </div>
+            <div class="service-info-content">
+                <h3>Higher Education Funding</h3>
+                <p>Secure global academic tracks with confidence. We map out institutional student assistance frameworks designed for seamless local or international university operations.</p>
+                <a href="#consultation" class="card-link">Secure Studies &rarr;</a>
+            </div>
+        </div>
+
+        <!-- SERVICE 5 -->
+        <div class="service-card">
+            <div class="service-img-holder">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=500&q=80" alt="Land and House Acquisition Plots">
+            </div>
+            <div class="service-info-content">
+                <h3>Property & Land Assistance</h3>
+                <p>Building or acquiring a raw structural plot? Our experts deliver end-to-end legal verification tracking, layout documentation reviews, and structural configuration assistance.</p>
+                <a href="#consultation" class="card-link">Verify Property Lines &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER SUPPORT IMAGED SPLIT MODULE -->
+    <section class="split-asymmetric-block" id="why-us">
+        <div class="split-media">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=700&q=80" alt="Brick and Key Customer Support Consultation Session">
+        </div>
+        <div class="split-text-box">
+            <h3>Elite Client Support Serving as Your Strategic Financial Bridge</h3>
+            <p>Navigating financial parameters alone can feel overwhelming. Brick and Key acts as your direct liaison, transforming complex system logistics into standard operations.</p>
+            
+            <!-- CODES AND FEATURES -->
+            <div class="feature-item">
+                <div class="feature-bullet">&#9670;</div>
+                <div>
+                    <h4>Multi-Bank Strategy Processing</h4>
+                    <p>We don’t settle for single evaluations. We query our deep Chennai banking array to secure best-in-market lending solutions.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-bullet">&#9670;</div>
+                <div>
+                    <h4>Doorstep Executive Care</h4>
+                    <p>Eliminate tiring bank queue cycles. Our executive team handles document processing directly from your workspace coordinates.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-bullet">&#9670;</div>
+                <div>
+                    <h4>Zero Hidden Discrepancies</h4>
+                    <p>Absolute transparency on layout processing charges, administrative structural rules, and payback parameters before signature collection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION HEADER -->
+    <section class="section-title-block" id="testimonials">
+        <span>Real Stories from Verified Asset Buyers</span>
+        <h2>What Our Clients Say About Us</h2>
+    </section>
+
+    <!-- TESTIMONIALS CONTENT GRID -->
+    <section class="testimonials-grid">
+        <!-- TESTIMONIAL 1 -->
+        <div class="testimonial-card">
+            <div>
+                <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testimonial-text">"Getting a home loan approved in Chennai for a multi-story apartment felt like an endless paper maze. The team at Brick & Key took over the entire document vetting pipeline and locked down an elite interest rate with SBI in record time. Absolute relief!"</p>
+            </div>
+            <div class="client-profile">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Arun K." class="client-avatar">
+                <div class="client-details">
+                    <h4>Arun Kumar</h4>
+                    <span>OMR, Chennai — Home Loan</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TESTIMONIAL 2 -->
+        <div class="testimonial-card">
+            <div>
+                <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testimonial-text">"As a business owner, standard processing channels always question your irregular cash flow files. Brick & Key understood my balance sheet architecture perfectly and safely structured a Loan Against Property to unlock necessary corporate capital."</p>
+            </div>
+            <div class="client-profile">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Priya R." class="client-avatar">
+                <div class="client-details">
+                    <h4>Priya Ramanathan</h4>
+                    <span>Anna Nagar — Business Loan Against Property</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TESTIMONIAL 3 -->
+        <div class="testimonial-card">
+            <div>
+                <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testimonial-text">"When my son got accepted into an international university framework, we needed swift funding balance checks to process his visa. Their doorstep processing service collected our records from our home and closed the allocation within days."</p>
+            </div>
+            <div class="client-profile">
+                <img src="https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&w=100&h=100&q=80" alt="Rajesh S." class="client-avatar">
+                <div class="client-details">
+                    <h4>Rajesh Sundaram</h4>
+                    <span>Adyar — Higher Education Funding</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE CONSULTATION CAPTURE FORM -->
+    <section class="form-section-wrapper" id="consultation">
+        <div class="consultation-form-box">
+            <div class="form-header">
+                <h3>Secure Your Financial Key</h3>
+                <p>Submit your parameters below for immediate advisory processing. A dedicated specialist will contact your interface within 2 hours.</p>
+            </div>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Consultation request received! A Brick & Key consultant will contact you shortly.');">
+                <div class="form-group">
+                    <label for="name">Full Legal Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Primary Contact Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Enter 10-digit mobile number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loan-type">Select Advisory Framework</label>
+                    <select id="loan-type" class="form-control" required>
+                        <option value="" disabled selected>Select the service you need...</option>
+                        <option value="home">New Home Loan</option>
+                        <option value="mortgage">Mortgage Loan (Against Property)</option>
+                        <option value="personal">Personal Loan Matrix</option>
+                        <option value="education">Educational Loan Framework</option>
+                        <option value="assistance">Property Legal / Land Assistance</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Target Valuation Scope</label>
+                    <select id="amount" class="form-control" required>
+                        <option value="" disabled selected>Select estimated funding needed...</option>
+                        <option value="under-15">Under ₹15 Lakhs</option>
+                        <option value="15-50">₹15 Lakhs - ₹50 Lakhs</option>
+                        <option value="above-50">Above ₹50 Lakhs</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-accent btn-submit-full">Initialize Free Strategy Session</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CORPORATE AMBIENT FOOTER -->
+    <footer>
+        <div class="footer-logo">BRICK & KEY<span>.</span></div>
+        <p class="footer-tagline">Architecting premium banking bridges and secure layout property verification across the Chennai region.</p>
+        
+        <div class="footer-links">
+            <a href="#services">Our Services</a>
+            <a href="#why-us">The Bridge Advantage</a>
+            <a href="#consultation">Book Call</a>
+        </div>
+
+        <div class="footer-divider"></div>
+        
+        <p class="legal-notice">&copy; 2026 Brick and Key Financial Consultancy Services. Formulated with standard responsive security safeguards.</p>
+    </footer>
+
+</body>
+</html>
